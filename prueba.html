@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+let tarjetasDisponibles = 500;
+let totalTarjetasVendidas = 0;
+let totalIngreso = 0;
+let seccion1 = 0;
+let seccion2 = 0;
+let seccion3 = 0;
+
+function registrarVenta(nombre, grado, cantidad, fecha, totalAPagar) {
+    
+    if (cantidad > 20) {
+        alert("La cantidad máxima de tarjetas por alumno es de 20");
+        return;
+    }
+
+    else (tarjetasDisponibles<cantidad)
+    {
+        alert("No hay suficientes tarjetas disponibles");
+    }
+
+    ventas.push({
+        
+        "nombre": nombre,
+        "grado": grado,
+        "cantidad": cantidad,
+        "fecha": fecha,
+        "totalAPagar": totalAPagar
+   
+    } );
+
+
+    tarjetasDisponibles -= cantidad;
+    totalTarjetasVendidas += cantidad;
+    totalIngreso += totalAPagar;
+
+    if (grado === "1-DS3A") {
+        seccion1++;
+    } else if (grado === "2-AC3C") {
+        seccion2++;
+    } else if (grado === "3-APS3D") {
+        seccion3++;
+    }
+    else 
+    {
+        alert("no hay mas opcines")
+    }
+
+    mostrarInformacion();
+}
+
+function mostrarInformacion() {
+    document.write("Tarjetas disponibles: " + tarjetasDisponibles + "<br>");
+    document.write("Porcentaje de compra por sección: <br>");
+    document.write("Sección 1: " + (seccion1 / ventas.length) * 100 + "%<br>");
+    document.write("Sección 2: " + (seccion2 / ventas.length) * 100 + "%<br>");
+    document.write("Sección 3: " + (seccion3 / ventas.length) * 100 + "%<br>");
+    document.write("Total de tarjetas vendidas: " + totalTarjetasVendidas + "<br>");
+    document.write("Total de ingreso: $" + totalIngreso + "<br>");
+
+ 
+    document.write("Nombre, Grado, Cantidad, Fecha, Total a pagar =,");
+    for (let i = 0; i < ventas.length; i++) {
+        
+        document.write( ventas[i].nombre );
+        document.write(ventas[i].grado );
+        document.write(  ventas[i].cantidad  );
+        document.write(  ventas[i].fecha );
+        document.write( ventas[i].totalAPagar );
+        
+
+        document.write("El nombre del alumno:"+nombre+"<br>");
+document.write("la seccion del alumno es :"+grado+"<br>");
+document.write("la cantidad de tarjetas es de :"+totalAPagar+"<br>");
+document.write("la fecha es de :"+Fecha+"<br>");
+
+
+    }
+    
+}
+
+
+
+
+
+
+    </script>
+</body>
+</html>

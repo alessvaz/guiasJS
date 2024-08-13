@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajando con vectores no inicializados</title>
+</head>
+<body>
+    <h1>llenando el vector</h1>
+<script>
+
+      
+var salario=new Array(5);
+var aumento=new Array(5);
+var otro=new Array(5);
+//llenar en vector
+var x=0;//inicializando
+while(x<salario.length)
+{
+salario[x]=parseFloat(prompt("ingrese el salario"));
+while(salario[x]<365)
+{
+    salario[x]=parseFloat(prompt("ingrese el salario correcto"));
+
+}//fin validar 
+aumento[x]=salario[x]*1.20;
+otro[x]=salario[x]*1.35;
+
+
+
+x++;//actualizando
+}//fin while
+//mostrando el contenido de los arreglos
+var j=0;//inicializar
+document.write("_________________________________________<br>");
+document.write("Salario-----------------------Aumento------------------------Aumento2 <br>");
+document.write("_________________________________________<br>");
+while(j<salario.length)
+{
+document.write(salario[j]+"-----------------------"+aumento[j]+"------------------"+otro[j]+"<br>");
+document.write("<br><br>");
+
+j++;
+}//fin while
+
+document.write("__________________________________________<br>");
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
